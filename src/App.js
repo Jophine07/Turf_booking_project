@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home';
+import AdminLogin from './components/AdminLogin';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import UserLogin from './components/UserLogin';
+import UserSignUp from './components/UserSignUp';
+import UserDashBoard from './components/UserDashBoard';
+import AdminDashBoard from './components/AdminDashBoard';
+import AddTurf from './components/AddTurf';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/adminlogin' element={<AdminLogin/>}/>
+        <Route path='/userlogin' element={<UserLogin/>}/>
+        <Route path='/usersignup' element={<UserSignUp/>}/>
+        <Route path='/UserDashBoard' element={<UserDashBoard/>}/>
+        <Route path='/AdminDashBoard' element={<AdminDashBoard/>}/>
+        <Route path='/addturf' element={<AddTurf/>}/>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
